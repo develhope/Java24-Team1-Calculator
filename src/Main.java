@@ -28,6 +28,24 @@ public class Main {
         String[] numeri;
         for (int i=0; i<operation.length(); i++){
             switch(operation.charAt(i)){
+                case '+':
+                    numeri = operation.split("[+]");
+                    num1 = Double.parseDouble(numeri[0]);
+                    num2 = Double.parseDouble(numeri[1]);
+                    somma(num1,num2);
+                    break;
+                case '-':
+                    numeri = operation.split("-");
+                    num1 = Double.parseDouble(numeri[0]);
+                    num2 = Double.parseDouble(numeri[1]);
+                    sottrazione(num1,num2);
+                    break;
+                case '*':
+                    numeri = operation.split("[*]");
+                    num1 = Double.parseDouble(numeri[0]);
+                    num2 = Double.parseDouble(numeri[1]);
+                    moltiplicazione(num1,num2);
+                    break;
                 case '/':
                     numeri = operation.split("[/]");
                     num1 = Double.parseDouble(numeri[0]);
