@@ -1,8 +1,13 @@
 import java.util.Scanner;
 
+import  java.lang.Math;
 public class Main {
     static Scanner scanner = new Scanner(System.in).useDelimiter("\n");
     public static void main(String[] args) {
+    }
+
+    public static void moltiplicazione(double num1, double num2) {
+        System.out.println("Il risultato della moltiplicazione è: " + num1 * num2);
         System.out.println("Calcolatrice Avanzata by TEAM 1\n");
 
         String exit;
@@ -18,6 +23,10 @@ public class Main {
             System.out.println("Vuoi eseguire un'altra operazione? \nPremi y per continuare o una qualsiasi altra cosa per uscire");
             exit = scanner.next();
         } while (exit.intern().equals("y"));
+    }
+
+    public static void potenza(double base, double esponente) {
+        System.out.println("Il risultato della potenza è: " + Math.pow(base, esponente));
     }
     static void identifyOperation (){
         System.out.println("Inserisci l'operazione da eseguire: ");
@@ -66,4 +75,20 @@ public class Main {
             }
         }
     }
+}
+
+    //Se il numero è pari ritorna true, altrimenti false
+    public static void oddOrEven(double num) {
+        double odd = num % 2;
+        if(odd == 0) {
+            System.out.println("Il inserito numero è pari!");
+        }
+        else {
+            System.out.println("Il inserito numero è dispari!");
+        }
+    }
+
+}
+
+public void main() {
 }
