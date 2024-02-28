@@ -1,13 +1,9 @@
 import java.util.Scanner;
-
 import  java.lang.Math;
 public class Main {
     static Scanner scanner = new Scanner(System.in).useDelimiter("\n");
     public static void main(String[] args) {
-    }
 
-    public static void moltiplicazione(double num1, double num2) {
-        System.out.println("Il risultato della moltiplicazione è: " + num1 * num2);
         System.out.println("Calcolatrice Avanzata by TEAM 1\n");
 
         String exit;
@@ -19,76 +15,78 @@ public class Main {
             System.out.println("Inserisci ^ tra gli operandi per una potenza;");
             System.out.println("Inserisci % dopo un numero per sapere se è pari o dispari;");
             System.out.println("Alla fine dell'operazione premi invio\n");
-            identifyOperation();
-            System.out.println("Vuoi eseguire un'altra operazione? \nPremi y per continuare o una qualsiasi altra cosa per uscire");
+            System.out.println(identifyOperation());
+            System.out.println("\nVuoi eseguire un'altra operazione? \nPremi y per continuare o una qualsiasi altra cosa per uscire");
             exit = scanner.next();
         } while (exit.intern().equals("y"));
     }
 
-    public static void potenza(double base, double esponente) {
-        System.out.println("Il risultato della potenza è: " + Math.pow(base, esponente));
-    }
-    static void identifyOperation (){
+    static String identifyOperation () {
         System.out.println("Inserisci l'operazione da eseguire: ");
         String operation = scanner.next();
-        operation=operation.replace(" ","");
+        operation = operation.replace(" ", "");
         double num1;
         double num2;
         String[] numeri;
-        for (int i=0; i<operation.length(); i++){
-            switch(operation.charAt(i)){
+        for (int i = 0; i < operation.length(); i++) {
+            switch (operation.charAt(i)) {
                 case '+':
                     numeri = operation.split("[+]");
                     num1 = Double.parseDouble(numeri[0]);
                     num2 = Double.parseDouble(numeri[1]);
-                    somma(num1,num2);
-                    break;
+                    return somma(num1, num2);
+
                 case '-':
                     numeri = operation.split("-");
                     num1 = Double.parseDouble(numeri[0]);
                     num2 = Double.parseDouble(numeri[1]);
-                    sottrazione(num1,num2);
-                    break;
+                    return sottrazione(num1, num2);
+
                 case '*':
                     numeri = operation.split("[*]");
                     num1 = Double.parseDouble(numeri[0]);
                     num2 = Double.parseDouble(numeri[1]);
-                    moltiplicazione(num1,num2);
-                    break;
+                    return moltiplicazione(num1, num2);
+
                 case '/':
                     numeri = operation.split("[/]");
                     num1 = Double.parseDouble(numeri[0]);
                     num2 = Double.parseDouble(numeri[1]);
-                    divisione(num1,num2);
-                    break;
+                    return divisione(num1, num2);
+
                 case '^':
                     numeri = operation.split("\\^");
                     num1 = Double.parseDouble(numeri[0]);
                     num2 = Double.parseDouble(numeri[1]);
-                    potenza(num1,num2);
-                    break;
+                    return potenza(num1, num2);
+
                 case '%':
                     numeri = operation.split("%");
                     num1 = Double.parseDouble(numeri[0]);
-                    oddOrEven(num1);
-                    break;
+                    return oddOrEven(num1);
             }
         }
+        return "Error";
     }
-}
+    public static String moltiplicazione(double num1, double num2) {
+        double result = num1 * num2;
+        return Double.toString(result);
+    }
+
 
     //Se il numero è pari ritorna true, altrimenti false
-    public static void oddOrEven(double num) {
-        double odd = num % 2;
-        if(odd == 0) {
-            System.out.println("Il inserito numero è pari!");
+    public static String oddOrEven(double num1) {
+        double even = num1 % 2;
+        if(even == 0) {
+            return "Il numero è pari!";
         }
         else {
-            System.out.println("Il inserito numero è dispari!");
+            return "Il numero è dispari!";
         }
     }
 
-}
+    public static String potenza(double num1, double num2) {
+        return "" + Math.pow(num1, num2);
+    }
 
-public void main() {
 }
