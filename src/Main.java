@@ -3,6 +3,9 @@ import  java.lang.Math;
 public class Main {
     static Scanner scanner = new Scanner(System.in).useDelimiter("\n");
     public static void main(String[] args) {
+ feat/first-branch
+        System.out.println("First commit, First Merge");
+
 
         System.out.println("Calcolatrice Avanzata by TEAM 1\n");
 
@@ -91,7 +94,7 @@ public class Main {
     }
 
 
-    //Se il numero è pari ritorna true, altrimenti false
+    
     public static String oddOrEven(double num1) {
         double even = num1 % 2;
         if(even == 0) {
@@ -104,6 +107,7 @@ public class Main {
 
     public static String potenza(double num1, double num2) {
         return "" + Math.pow(num1, num2);
+
     }
 
 develop
