@@ -73,6 +73,23 @@ public class Main {
         return Double.toString(result);
     }
 
+    public static double somma(double num1, double num2) {
+        return num1 + num2;
+    }
+
+    public static double sottrazione(double num1, double num2) {
+        return num1 - num2;
+    }
+
+    public static double divisione(double num1, double num2) {
+        if (num2 != 0) {
+            return num1 / num2;
+        } else {
+            System.out.println("Impossibile dividere per zero");
+            return Double.NaN; // Not a Number
+        }
+    }
+
 
     //Se il numero è pari ritorna true, altrimenti false
     public static String oddOrEven(double num1) {
@@ -89,4 +106,7 @@ public class Main {
         return "" + Math.pow(num1, num2);
     }
 
+develop
 }
+
+
